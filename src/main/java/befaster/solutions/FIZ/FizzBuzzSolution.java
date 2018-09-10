@@ -66,7 +66,7 @@ public class FizzBuzzSolution {
 
     //A number is "buzz" if it is divisible by 3 or if it has a 3 in it
     public boolean numberIsBuzz(Integer number, String stringRepresentation) {
-        if ((number % 3 == 0) || (stringRepresentation.contains("3")))
+        if ((number % 5 == 0) || (stringRepresentation.contains("5")))
             return true;
         return false;
     }
