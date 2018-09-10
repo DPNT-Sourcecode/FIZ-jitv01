@@ -29,8 +29,8 @@ public class FizzBuzzSolution {
 
     }
 
-    public boolean numberIsDeluxe(Integer number) {
-        String stringRepresentation = String.valueOf(number);
+    //number is considered to be "deluxe" if it is greater than 10 and all the digits are identical
+    public boolean numberIsDeluxe(Integer number, String stringRepresentation) {
 
         boolean hasTheSameDigits = true;
 
@@ -42,6 +42,12 @@ public class FizzBuzzSolution {
         if (number > 10)
             return true;
 
+        return false;
+    }
+
+    public boolean numberIsFizz(Integer number, String stringRepresentation) {
+        if ((number % 3 == 0) || (stringRepresentation.contains("3")))
+            return true;
         return false;
     }
 
