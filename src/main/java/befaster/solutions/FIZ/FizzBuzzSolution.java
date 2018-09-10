@@ -22,33 +22,25 @@ public class FizzBuzzSolution {
         if (isFizz && isBuzz && isDeluxe)
             return "fizz buzz deluxe";
 
-        //CASE: fizz deluxe
-        if (isFizz && isDeluxe)
-            return "fizz deluxe";
-
         //CASE: fizz fake deluxe
         if (isFizz && isFakeDeluxe)
             return "fizz fake deluxe";
 
-        //CASE: buzz deluxe
-        if (isBuzz && isDeluxe)
-            return "buzz deluxe";
+        //CASE: fizz deluxe
+        if (isFizz && isDeluxe)
+            return "fizz deluxe";
 
         //CASE: buzz fake deluxe
         if (isBuzz && isFakeDeluxe)
             return "buzz fake deluxe";
 
+        //CASE: buzz deluxe
+        if (isBuzz && isDeluxe)
+            return "buzz deluxe";
+
         //CASE: fizz buzz
         if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation))
             return "fizz buzz";
-
-        //CASE: fizz
-        if (numberIsFizz(number, stringRepresentation))
-            return "fizz";
-
-        //CASE: buzz
-        if (numberIsBuzz(number, stringRepresentation))
-            return "buzz";
 
         //CASE: fake deluxe
         if (isFakeDeluxe)
@@ -57,6 +49,14 @@ public class FizzBuzzSolution {
         //CASE: deluxe
         if (numberIsDeluxe(number, stringRepresentation))
             return "deluxe";
+
+        //CASE: fizz
+        if (numberIsFizz(number, stringRepresentation))
+            return "fizz";
+
+        //CASE: buzz
+        if (numberIsBuzz(number, stringRepresentation))
+            return "buzz";
 
         //CASE: none of the above
         return String.valueOf(number);
