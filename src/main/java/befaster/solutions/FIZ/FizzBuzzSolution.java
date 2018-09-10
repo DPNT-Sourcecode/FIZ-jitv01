@@ -9,17 +9,34 @@ public class FizzBuzzSolution {
 
         String stringRepresentation = String.valueOf(number);
 
+        boolean isFakeDeluxe = numberIsFakeDeluxe(number, stringRepresentation);
+        boolean isDeluxe = numberIsDeluxe(number, stringRepresentation);
+        boolean isFizz = numberIsFizz(number, stringRepresentation);
+        boolean isBuzz = numberIsBuzz(number, stringRepresentation);
+
+        //CASE fizz buzz fake deluxe
+        if (isFizz && isBuzz && isFakeDeluxe)
+            return "fizz buzz fake deluxe";
+
         //CASE: fizz buzz deluxe
-        if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
+        if (isFizz && isBuzz && isDeluxe)
             return "fizz buzz deluxe";
 
         //CASE: fizz deluxe
-        if (numberIsFizz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
+        if (isFizz && isDeluxe)
             return "fizz deluxe";
 
+        //CASE: fizz fake deluxe
+        if (isFizz && isFakeDeluxe)
+            return "fizz fake deluxe";
+
         //CASE: buzz deluxe
-        if (numberIsBuzz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
+        if (isBuzz && isDeluxe)
             return "buzz deluxe";
+
+        //CASE: buzz fake deluxe
+        if (isBuzz && isFakeDeluxe)
+            return "buzz fake deluxe";
 
         //CASE: fizz buzz
         if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation))
@@ -36,6 +53,10 @@ public class FizzBuzzSolution {
         //CASE: deluxe
         if (numberIsDeluxe(number, stringRepresentation))
             return "deluxe";
+
+        //CASE:
+        if (isFakeDeluxe)
+            return "fake deluxe";
 
         //CASE: none of the above
         return String.valueOf(number);
@@ -55,6 +76,12 @@ public class FizzBuzzSolution {
             return true;
 
         return false;
+    }
+
+    public boolean numberIsFakeDeluxe(Integer number, String stringRepresentation) {
+        boolean isDeluxe = numberIsDeluxe(number, stringRepresentation);
+
+        return (isDeluxe && (number % 2 == 1));
     }
 
     //A number is "fizz" if it is divisible by 3 or if it has a 3 in it
