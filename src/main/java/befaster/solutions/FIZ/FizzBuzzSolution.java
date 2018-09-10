@@ -4,8 +4,7 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class FizzBuzzSolution {
 
-    //method that returns a message depending on the input number
-
+    //Method that returns a message depending on the input number
     public String fizzBuzz(Integer number) {
 
         String stringRepresentation = String.valueOf(number);
@@ -13,6 +12,14 @@ public class FizzBuzzSolution {
         //CASE: fizz buzz deluxe
         if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
             return "fizz buzz deluxe";
+
+        //CASE: fizz deluxe
+        if (numberIsFizz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
+            return "fizz deluxe";
+
+        //CASE: buzz deluxe
+        if (numberIsBuzz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
+            return "buzz deluxe";
 
         //CASE: fizz buzz
         if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation))
@@ -25,6 +32,10 @@ public class FizzBuzzSolution {
         //CASE: buzz
         if (numberIsBuzz(number, stringRepresentation))
             return "buzz";
+
+        //CASE: deluxe
+        if (numberIsDeluxe(number, stringRepresentation))
+            return "deluxe";
 
         //CASE: none of the above
         return String.valueOf(number);
