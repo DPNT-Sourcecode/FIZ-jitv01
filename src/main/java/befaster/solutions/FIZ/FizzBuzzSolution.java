@@ -12,6 +12,15 @@ public class FizzBuzzSolution {
 
         //CASE deluxe when number is greater than 10 ad all the digits are identical
 
+        if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
+            return "fizz buzz deluxe";
+
+        if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation))
+            return "fizz buzz";
+
+        if (numberIsFizz(number, stringRepresentation))
+            return "fizz";
+
         //CASE (number % 3 == 0 OR number contains 3) AND (number % 5 == 0 OR number contains 5)
         if (((number % 3 == 0) || (stringRepresentation.contains("3"))) && ((number % 5 == 0) || (stringRepresentation.contains("5"))))
             return "fizz buzz";
@@ -45,7 +54,15 @@ public class FizzBuzzSolution {
         return false;
     }
 
+    //A number is "fizz" if it is divisible by 3 or if it has a 3 in it
     public boolean numberIsFizz(Integer number, String stringRepresentation) {
+        if ((number % 3 == 0) || (stringRepresentation.contains("3")))
+            return true;
+        return false;
+    }
+
+    //A number is "buzz" if it is divisible by 3 or if it has a 3 in it
+    public boolean numberIsBuzz(Integer number, String stringRepresentation) {
         if ((number % 3 == 0) || (stringRepresentation.contains("3")))
             return true;
         return false;
