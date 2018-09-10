@@ -8,16 +8,18 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
 
-        //CASE number % 3 == 0 AND number % 5 == 0
-        if ((number % 3 == 0) && (number % 5 == 0))
+        String stringRepresentation = String.valueOf(number);
+
+        //CASE (number % 3 == 0 OR number contains 3) AND (number % 5 == 0 OR number contains 5)
+        if (((number % 3 == 0) || (stringRepresentation.contains("3"))) && ((number % 5 == 0) || (stringRepresentation.contains("5"))))
             return "fizz buzz";
 
-        //CASE number % 3 == 0
-        if (number % 3 == 0)
+        //CASE number % 3 == 0 OR numbber contains 3
+        if ((number % 3 == 0) || (stringRepresentation.contains("3")))
             return "fizz";
 
-        //CASE number % 5 == 0
-        if (number % 5 == 0)
+        //CASE number % 5 == 0 numbber contains 3
+        if (number % 5 == 0 || stringRepresentation.contains("5"))
             return "buzz";
 
         //number is not divisible by neither 3 or 5
