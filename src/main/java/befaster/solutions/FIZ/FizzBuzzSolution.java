@@ -50,13 +50,13 @@ public class FizzBuzzSolution {
         if (numberIsBuzz(number, stringRepresentation))
             return "buzz";
 
+        //CASE: fake deluxe
+        if (isFakeDeluxe)
+            return "fake deluxe";
+
         //CASE: deluxe
         if (numberIsDeluxe(number, stringRepresentation))
             return "deluxe";
-
-        //CASE:
-        if (isFakeDeluxe)
-            return "fake deluxe";
 
         //CASE: none of the above
         return String.valueOf(number);
