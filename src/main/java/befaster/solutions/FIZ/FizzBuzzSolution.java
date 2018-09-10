@@ -10,32 +10,24 @@ public class FizzBuzzSolution {
 
         String stringRepresentation = String.valueOf(number);
 
-        //CASE deluxe when number is greater than 10 ad all the digits are identical
-
+        //CASE: fizz buzz deluxe
         if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation) && numberIsDeluxe(number, stringRepresentation))
             return "fizz buzz deluxe";
 
+        //CASE: fizz buzz
         if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation))
             return "fizz buzz";
 
+        //CASE: fizz
         if (numberIsFizz(number, stringRepresentation))
             return "fizz";
 
-        //CASE (number % 3 == 0 OR number contains 3) AND (number % 5 == 0 OR number contains 5)
-        if (((number % 3 == 0) || (stringRepresentation.contains("3"))) && ((number % 5 == 0) || (stringRepresentation.contains("5"))))
-            return "fizz buzz";
-
-        //CASE number % 3 == 0 OR numbber contains 3
-        if ((number % 3 == 0) || (stringRepresentation.contains("3")))
-            return "fizz";
-
-        //CASE number % 5 == 0 numbber contains 3
-        if (number % 5 == 0 || stringRepresentation.contains("5"))
+        //CASE: buzz
+        if (numberIsBuzz(number, stringRepresentation))
             return "buzz";
 
-        //number is not divisible by neither 3 or 5
+        //CASE: none of the above
         return String.valueOf(number);
-
     }
 
     //number is considered to be "deluxe" if it is greater than 10 and all the digits are identical
