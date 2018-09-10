@@ -7,6 +7,6 @@ public class HelloSolution {
     //friendName is a parameter responsible for friend's name
     public String hello(String friendName) {
 
-       return "Hello, " + friendName;
+       return "Hello, " + friendName + "!";
     }
 }
