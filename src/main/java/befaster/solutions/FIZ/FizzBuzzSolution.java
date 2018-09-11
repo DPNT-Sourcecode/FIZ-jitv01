@@ -23,7 +23,7 @@ public class FizzBuzzSolution {
             return "fizz buzz deluxe";
 
         //CASE: fizz fake deluxe
-        if (numberIsFizzBuzzDeluxe(number, stringRepresentation) && (number % 2 == 1))
+        if (numberIsFizzDeluxe(number, stringRepresentation) && (number % 2 == 1))
             return "fizz fake deluxe";
 
         //CASE: fizz deluxe
