@@ -27,7 +27,7 @@ public class FizzBuzzSolution {
             return "fizz fake deluxe";
 
         //CASE: fizz deluxe
-        if (isFizz && isDeluxe)
+        if (numberIsFizzDeluxe(number, stringRepresentation))
             return "fizz deluxe";
 
         //CASE: buzz fake deluxe
@@ -35,7 +35,7 @@ public class FizzBuzzSolution {
             return "buzz fake deluxe";
 
         //CASE: buzz deluxe
-        if (isBuzz && isDeluxe)
+        if (numberIsBuzzDeluxe(number, stringRepresentation))
             return "buzz deluxe";
 
         //CASE: fizz buzz
@@ -87,6 +87,18 @@ public class FizzBuzzSolution {
     //A number is "fizz" if it is divisible by 3 or if it has a 3 in it
     public boolean numberIsFizz(Integer number, String stringRepresentation) {
         if ((number % 3 == 0) || (stringRepresentation.contains("3")))
+            return true;
+        return false;
+    }
+
+    public boolean numberIsFizzDeluxe(Integer number, String stringRepresentation) {
+        if ((number % 3 == 0) && (stringRepresentation.contains("3")))
+            return true;
+        return false;
+    }
+
+    public boolean numberIsBuzzDeluxe(Integer number, String stringRepresentation) {
+        if ((number % 5 == 0) && (stringRepresentation.contains("5")))
             return true;
         return false;
     }
