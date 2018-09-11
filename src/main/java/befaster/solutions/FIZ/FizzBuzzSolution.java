@@ -15,11 +15,11 @@ public class FizzBuzzSolution {
         boolean isBuzz = numberIsBuzz(number, stringRepresentation);
 
         //CASE fizz buzz fake deluxe
-        if (isFizz && isBuzz && isFakeDeluxe)
+        if (numberIsFizzBuzzFakeDeluxe(number, stringRepresentation))
             return "fizz buzz fake deluxe";
 
         //CASE: fizz buzz deluxe
-        if (isFizz && isBuzz && isDeluxe)
+        if (numberIsFizzBuzzDeluxe(number, stringRepresentation))
             return "fizz buzz deluxe";
 
         //CASE: fizz fake deluxe
@@ -99,6 +99,18 @@ public class FizzBuzzSolution {
 
     public boolean numberIsBuzzDeluxe(Integer number, String stringRepresentation) {
         if ((number % 5 == 0) && (stringRepresentation.contains("5")))
+            return true;
+        return false;
+    }
+
+    public boolean numberIsFizzBuzzFakeDeluxe(Integer number, String stringRepresentation) {
+        if (numberIsBuzzDeluxe(number, stringRepresentation) && numberIsFizzDeluxe(number, stringRepresentation) && (number % 2 == 1))
+            return true;
+        return false;
+    }
+
+    public boolean numberIsFizzBuzzDeluxe(Integer number, String stringRepresentation) {
+        if (numberIsBuzzDeluxe(number, stringRepresentation) && numberIsFizzDeluxe(number, stringRepresentation) && (number % 2 == 0))
             return true;
         return false;
     }
