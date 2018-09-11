@@ -23,7 +23,7 @@ public class FizzBuzzSolution {
             return "fizz buzz deluxe";
 
         //CASE: fizz fake deluxe
-        if (isFizz && isFakeDeluxe)
+        if (numberIsFizzBuzzDeluxe(number, stringRepresentation) && (number % 2 == 1))
             return "fizz fake deluxe";
 
         //CASE: fizz deluxe
@@ -31,7 +31,7 @@ public class FizzBuzzSolution {
             return "fizz deluxe";
 
         //CASE: buzz fake deluxe
-        if (isBuzz && isFakeDeluxe)
+        if (numberIsBuzzDeluxe(number, stringRepresentation) && (number % 2 == 1))
             return "buzz fake deluxe";
 
         //CASE: buzz deluxe
@@ -42,14 +42,17 @@ public class FizzBuzzSolution {
         if (numberIsFizz(number, stringRepresentation) && numberIsBuzz(number, stringRepresentation))
             return "fizz buzz";
 
+        /*
         //CASE: fake deluxe
         if (isFakeDeluxe)
             return "fake deluxe";
+            */
 
+        /*
         //CASE: deluxe
         if (numberIsDeluxe(number, stringRepresentation))
             return "deluxe";
-
+            */
         //CASE: fizz
         if (numberIsFizz(number, stringRepresentation))
             return "fizz";
