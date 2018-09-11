@@ -107,13 +107,17 @@ public class FizzBuzzSolution {
     }
 
     public boolean numberIsFizzBuzzFakeDeluxe(Integer number, String stringRepresentation) {
-        if (numberIsBuzzDeluxe(number, stringRepresentation) && numberIsFizzDeluxe(number, stringRepresentation) && (number % 2 == 1))
+        boolean firstCase = numberIsFizzDeluxe(number, stringRepresentation) && (number % 5 == 0);
+        boolean secondCase = numberIsBuzzDeluxe(number, stringRepresentation) && (number % 3 == 0);
+        if ((firstCase || secondCase) && (number % 2 == 1))
             return true;
         return false;
     }
 
     public boolean numberIsFizzBuzzDeluxe(Integer number, String stringRepresentation) {
-        if (numberIsBuzzDeluxe(number, stringRepresentation) && numberIsFizzDeluxe(number, stringRepresentation) && (number % 2 == 0))
+        boolean firstCase = numberIsFizzDeluxe(number, stringRepresentation) && (number % 5 == 0);
+        boolean secondCase = numberIsBuzzDeluxe(number, stringRepresentation) && (number % 3 == 0);
+        if ((firstCase || secondCase) && (number % 2 == 0))
             return true;
         return false;
     }
