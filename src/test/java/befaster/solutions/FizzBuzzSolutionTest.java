@@ -17,6 +17,6 @@ public class FizzBuzzSolutionTest {
 
     @Test
     public void run() {
-        assertThat(solution.fizzBuzz(11), equalTo("fake deluxe"));
+        assertThat(solution.fizzBuzz(3315), equalTo("fizz buzz fake deluxe"));
     }
 }
